@@ -13,6 +13,13 @@ header {
     color: #fff;
 }
 
+header .logo {
+    max-width: 150px;
+    height: auto;
+    display: block;
+    margin: 0 auto 10px auto;
+}
+
 h1 {
     margin: 0;
     font-size: 2em;
