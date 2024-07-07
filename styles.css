@@ -14,7 +14,7 @@ header {
 }
 
 header .logo {
-    max-width: 200px;  /* Aumentar tamaño del logo */
+    max-width: 200px;
     height: auto;
     display: block;
     margin: 0 auto 10px auto;
@@ -27,6 +27,7 @@ nav ul {
     display: flex;
     justify-content: center;
     background-color: #444;
+    flex-wrap: wrap; /* Ajuste para dispositivos móviles */
 }
 
 nav ul li {
@@ -61,12 +62,13 @@ main {
     justify-content: center;
     gap: 20px;
     margin-bottom: 20px;
+    flex-wrap: wrap; /* Ajuste para dispositivos móviles */
 }
 
 .image-container {
     position: relative;
     width: 300px;
-    height: 450px;  /* Ajustar altura para un formato más vertical */
+    height: 450px;
     cursor: pointer;
     overflow: hidden;
 }
@@ -104,6 +106,7 @@ main {
     background: #fff;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px; /* Ajuste para agregar espacio en dispositivos móviles */
 }
 
 #contacto {
@@ -128,11 +131,36 @@ footer .social-icons {
 
 footer .social-icons a {
     margin: 0 10px;
-    color: #fff;  /* Asegurarse que el color coincida con el tema */
+    color: #fff;
     font-size: 24px;
     transition: color 0.3s ease;
 }
 
 footer .social-icons a:hover {
-    color: #777;  /* Cambiar color en hover para que coincida con el tema */
+    color: #777;
+}
+
+/* Media queries para responsividad */
+@media (max-width: 768px) {
+    .main-images {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .image-container {
+        width: 100%;
+        height: auto;
+    }
+
+    header .logo {
+        max-width: 150px;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
 }
