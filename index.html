@@ -1,1 +1,35 @@
-<h1>Github page test</h1>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jenyan - Fotografía Profesional</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Jenyan Fotografía Profesional</h1>
+    </header>
+    <main>
+        <section class="main-images">
+            <div class="image-container" onclick="navigateTo('pareja')">
+                <img src="pareja.jpg" alt="Foto de pareja">
+                <div class="overlay">Foto de Pareja</div>
+            </div>
+            <div class="image-container" onclick="navigateTo('embarazo')">
+                <img src="embarazo.jpg" alt="Foto de embarazo">
+                <div class="overlay">Foto de Embarazo</div>
+            </div>
+            <div class="image-container" onclick="navigateTo('bebe')">
+                <img src="bebe.jpg" alt="Foto de bebé">
+                <div class="overlay">Foto de Bebé</div>
+            </div>
+        </section>
+        <section id="sobre-mi">
+            <h2>Sobre mi</h2>
+            <p>Mi nombre es Jennifer Yanahí Pedroza Hernandez, he llevado cursos de fotografía durante varios años, en los cuales he desarrollado cariño por la fotografía enfocada al amor, el amor en pareja y el amor de una madre. Mi trabajo es hecho con toda mi dedicación y siempre mi foco es el capturar los momentos que puedan no solo quedarse en la memoria al ver las fotografias, sino hacer recordar a través de ellas, lo que el corazón sentía en esos momentos.</p>
+        </section>
+    </main>
+    <script src="scripts.js"></script>
+</body>
+</html>
