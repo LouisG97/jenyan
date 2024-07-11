@@ -99,23 +99,7 @@
             var paqueteSeleccionado = $(this).find('h3').text();
             $('#paquete-seleccionado').val(paqueteSeleccionado);
             $('#formulario-reserva').slideDown();
-        });
-
-        $('#reserva-form').submit(function(event) {
-            event.preventDefault();
-            var formData = $(this).serialize();
-            $.ajax({
-                type: 'POST',
-                url: 'reservar.php',
-                data: formData,
-                success: function(response) {
-                    alert(response);
-                },
-                error: function() {
-                    alert('Error al enviar la reserva.');
-                }
-            });
-        });
+        });        
     });
 
     </script>
