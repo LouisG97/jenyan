@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maternidad - Jenyan Fotografía Profesional</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <header>
+        <img src="JenyanLogo.png" alt="Jenyan Logo" class="logo">
+        <nav>
+            <ul>
+                <li><a href="index.html#save-the-date">Save the Date</a></li>
+                <li><a href="index.html#maternidad">Maternidad</a></li>
+                <li><a href="index.html#newborn">New Born</a></li>
+                <li><a href="index.html#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="gallery">
+            <h2>Maternidad</h2>
+            <div class="gallery-images">
+                <img src="maternidad1.jpg" alt="Maternidad 1">
+                <img src="maternidad2.jpg" alt="Maternidad 2">
+                <img src="maternidad3.jpg" alt="Maternidad 3">
+                <img src="maternidad4.jpg" alt="Maternidad 4">
+                <img src="maternidad5.jpg" alt="Maternidad 5">
+            </div>
+            <button id="reservar-cita">Reservar Cita</button>
+        </section>
+        <section id="paquetes" class="paquetes">
+            <div class="paquete" id="paquete1">
+                <h3>MATERNIDAD</h3>
+                <p>6 POSES<br>Ofrece</p>
+                <ul>
+                    <li>1 hora de sesión</li>
+                    <li>15 fotografías impresas tamaño 5x7</li>
+                    <li>ARCHIVOS DIGITALES</li>
+                    <li>50 fotografías sin retoque</li>
+                    <li>20 fotografías con retoque</li>
+                    <li>FOTOGRAFÍA DE REGALO 8X10</li>
+                    <li>10% Descuento Sesión Newborn</li>
+                    <li>Vestido</li>
+                </ul>
+                <p>Precio $2,099</p>
+            </div>
+            <div class="paquete" id="paquete2">
+                <h3>MATERNIDAD 2</h3>
+                <p>4 POSES<br>Sesión 1 hora</p>
+                <ul>
+                    <li>10 fotografías impresas tamaño 5x7</li>
+                    <li>ARCHIVOS DIGITALES</li>
+                    <li>35 fotografías sin retoque</li>
+                    <li>10 fotografías con retoque</li>
+                </ul>
+                <p>Precios desde $1,599</p>
+            </div>
+            <p>ES IMPORTANTE TENER 5 O MAS MESES DE EMBARAZO PARA QUE EL RESULTADO SEA SATISFACTORIO</p>
+        </section>
+        <section id="formulario-reserva" class="formulario-reserva">
+            <form id="reserva-form" action="reservar.php" method="post">
+                <h3>Reserva tu cita</h3>
+                <label for="nombre">Nombre Completo:</label>
+                <input type="text" id="nombre" name="nombre" required>
+                <label for="telefono">Número de Teléfono:</label>
+                <input type="tel" id="telefono" name="telefono" required>
+                <label for="fecha">Fecha de la Sesión:</label>
+                <input type="date" id="fecha" name="fecha" required>
+                <label for="codigo-descuento">Tienes un código de descuento? Cajealo aqui:</label>
+                <input type="text" id="codigo-descuento" name="codigo-descuento">
+                <input type="hidden" id="paquete-seleccionado" name="paquete-seleccionado">
+                <button type="submit">Agendar cita</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>© 2024 Todos los derechos reservados</p>
+    </footer>
+    <script>
+        $(document).ready(function() {
+            $('#paquetes').hide();
+            $('#formulario-reserva').hide();
+
+            $('#reservar-cita').click(function() {
+                $('#paquetes').slideToggle();
+            });
+
+            $('.paquete').click(function() {
+                var paqueteSeleccionado = $(this).find('h3').text();
+                $('#paquete-seleccionado').val(paqueteSeleccionado);
+                $('#formulario-reserva').slideDown();
+            });
+
+            $('#reserva-form').submit(function(event) {
+                event.preventDefault();
+                var formData = $(this).serialize();
+                $.ajax({
+                    type: 'POST',
+                    url: 'reservar.php',
+                    data: formData,
+                    success: function(response) {
+                        alert('Reserva enviada exitosamente.');
+                    },
+                    error: function() {
+                        alert('Error al enviar la reserva.');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

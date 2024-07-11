@@ -149,30 +149,112 @@ footer .social-icons a {
 }
 
 footer .social-icons a:hover {
-    color: #555;
+    color: #ddd;
 }
 
-/* Media queries para responsividad */
-@media (max-width: 768px) {
-    .main-images {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .image-container {
-        width: 100%;
-        height: auto;
-    }
-
-    header .logo {
-        max-width: 150px;
-    }
-
-    nav ul {
-        flex-direction: column;
-    }
-
-    nav ul li {
-        margin: 5px 0;
-    }
+.gallery {
+    text-align: center;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    max-width: 1000px;
+    width: 100%;
 }
+
+.gallery-images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.gallery-images img {
+    width: 300px;
+    height: auto;
+}
+
+button {
+    background-color: #8292A0;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #6E7D8B;
+}
+
+.paquetes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    max-width: 1000px;
+    width: 100%;
+}
+
+.paquete {
+    text-align: left;
+    background: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    width: 100%;
+}
+
+.paquete:hover {
+    transform: scale(1.05);
+}
+
+.formulario-reserva {
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    max-width: 600px;
+    width: 100%;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+form label {
+    font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="tel"],
+form input[type="date"] {
+    padding: 10px;
+    border: 1px solid #ddd;
+    width: 100%;
+}
+
+form button {
+    background-color: #8292A0;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #6E7D8B;
+}
+
