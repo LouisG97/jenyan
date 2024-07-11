@@ -50,6 +50,13 @@ h1 {
     font-size: 2em;
 }
 
+.main-title {
+    text-align: center; /* Centra el texto horizontalmente */
+    margin-top: 20px; /* Espacio superior */
+    color: #333; /* Color del texto */
+    font-size: 2em; /* Tamaño de fuente */
+}
+
 main {
     display: flex;
     flex-direction: column;
@@ -152,27 +159,25 @@ footer .social-icons a:hover {
     color: #ddd;
 }
 
-.gallery {
-    text-align: center;
-    background: #fff;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-    max-width: 1000px;
+/* Ajustes generales para las imágenes de la galería */
+.gallery img {
     width: 100%;
-}
-
-.gallery-images {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-}
-
-.gallery-images img {
-    width: 300px;
+    max-width: 300px; /* Ajusta este valor según el tamaño que desees */
     height: auto;
+    margin-bottom: 20px;
 }
+
+/* Ajustes específicos para mantener las proporciones de maternidad3.jpg */
+#imagen-maternidad3 {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 300px; /* Ajusta este valor según el tamaño que desees */
+    display: block;
+    margin: 0 auto; /* Centrar horizontalmente */
+}
+
+
 
 button {
     background-color: #8292A0;
@@ -258,3 +263,54 @@ form button:hover {
     background-color: #6E7D8B;
 }
 
+#paquetes {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.paquete {
+    padding: 20px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    flex: 1;
+    max-width: 45%;
+    text-align: center;
+}
+
+.paquete:hover {
+    background-color: #e0e0e0;
+}
+
+.paquete.seleccionado {
+    background-color: #d1e7dd;
+    border-color: #0f5132;
+}
+
+#paquetes-leyenda {
+    text-align: center;
+    margin: 20px 0;
+    font-weight: bold;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.button-container button {
+    padding: 10px 20px;
+    background-color: #8292A0;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button-container button:hover {
+    background-color: #6E7D8B;
+}
