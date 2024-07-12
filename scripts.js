@@ -12,3 +12,24 @@ function navigateTo(section) {
             break;
     }
 }
+
+function sendToWhatsapp(){
+    let number = "+526442041328";
+
+    let mensaje = "Hola, te escribo para agendar una cita, abajo te dejo mis datos: \n";
+    let paquete = document.getElementById('paquete-seleccionado').value;
+    let nombre = document.getElementById('nombre').value;
+    let telefono = document.getElementById('telefono').value;
+    let fecha = document.getElementById('fecha').value;
+    let codigo = document.getElementById('codigo-descuento').value;
+
+    var url = "https://wa.me/"+number+"?text="
+    + mensaje+"%0a"
+    +"Paquete seleccionado: "+paquete+"%0a"
+    +"Nombre: "+nombre+"%0a"
+    +"Teléfono: "+telefono+"%0a"
+    +"Fecha: "+fecha+"%0a"
+    +"Código de descuento: "+codigo+"%0a%0a";
+
+    window.open(url, '_blank').focus();
+}
