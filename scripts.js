@@ -33,3 +33,20 @@ function sendToWhatsapp(){
 
     window.open(url, '_blank').focus();
 }
+
+$(document).ready(function() {
+    $('#paquetes').hide();
+    $('#formulario-reserva').hide();
+
+    $('#reservar-cita').click(function() {
+        $('#paquetes').slideToggle();
+    });
+
+    $('.paquete').click(function() {
+        $('.paquete').removeClass('seleccionado');
+        $(this).addClass('seleccionado');
+        var paqueteSeleccionado = $(this).find('h3').text();
+        $('#paquete-seleccionado').val(paqueteSeleccionado);
+        $('#formulario-reserva').slideDown();
+    });        
+});
