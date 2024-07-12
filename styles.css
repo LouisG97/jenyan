@@ -57,6 +57,13 @@ h1 {
     font-size: 2em; /* Tamaño de fuente */
 }
 
+.mid-title {
+    text-align: center; /* Centra el texto horizontalmente */
+    margin-top: 20px; /* Espacio superior */
+    color: #333; /* Color del texto */
+    font-size: 2em; /* Tamaño de fuente */
+}
+
 main {
     display: flex;
     flex-direction: column;
@@ -107,6 +114,8 @@ main {
 .overlay {
     position: absolute;
     bottom: 0;
+    left: 0;
+    right: 0;
     background: rgba(0, 0, 0, 0.5);
     color: #fff;
     width: 100%;
@@ -178,7 +187,29 @@ footer .social-icons a:hover {
     margin-bottom: 20px;
 }
 
+@media (max-width: 1200px) {
+    .image-container {
+        width: calc(25% - 20px); /* Para 4 columnas en pantallas medianas */
+    }
+}
 
+@media (max-width: 992px) {
+    .image-container {
+        width: calc(33.33% - 20px); /* Para 3 columnas en tabletas */
+    }
+}
+
+@media (max-width: 768px) {
+    .image-container {
+        width: calc(50% - 20px); /* Para 2 columnas en dispositivos móviles */
+    }
+}
+
+@media (max-width: 480px) {
+    .image-container {
+        width: 100%; /* Una columna completa en dispositivos muy pequeños */
+    }
+}
 
 button {
     background-color: #8292A0;
