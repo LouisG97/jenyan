@@ -52,7 +52,7 @@
         </section>
         
         <section id="formulario-reserva">
-            <form id="reserva-form" action="https://formsubmit.co/d409e8657f1cb7376541b6945825a07f" method="POST">
+            <form id="reserva-form">
                 <input type="hidden" id="paquete-seleccionado" name="paquete_seleccionado">
                 <label for="nombre">Nombre Completo:</label>
                 <input type="text" id="nombre" name="nombre" required>
@@ -63,7 +63,7 @@
                 <label for="codigo-descuento">¿Tienes un código de descuento? Cánjealo aquí:</label>
                 <input type="text" id="codigo-descuento" name="codigo_descuento">
                 <div class="button-container">
-                    <button type="submit">Agendar Cita</button>
+                    <button type="submit" onclick="sendToWhatsapp()">Agendar cita por Whatsapp</button>
                 </div>
                 
             </form>
@@ -72,24 +72,6 @@
     <footer>
         <p>© 2024 Todos los derechos reservados</p>
     </footer>
-    <script>
-        $(document).ready(function() {
-        $('#paquetes').hide();
-        $('#formulario-reserva').hide();
-
-        $('#reservar-cita').click(function() {
-            $('#paquetes').slideToggle();
-        });
-
-        $('.paquete').click(function() {
-            $('.paquete').removeClass('seleccionado');
-            $(this).addClass('seleccionado');
-            var paqueteSeleccionado = $(this).find('h3').text();
-            $('#paquete-seleccionado').val(paqueteSeleccionado);
-            $('#formulario-reserva').slideDown();
-        });        
-    });
-
-    </script>
+    <script src="scripts.js"></script>
 </body>
 </html>
