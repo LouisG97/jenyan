@@ -34,6 +34,17 @@ function sendToWhatsapp(){
     window.open(url, '_blank').focus();
 }
 
+function sendToWhatsapp2(){
+    let number = "+526442041328";
+
+    let mensaje = "Hola, te escribo desde tu pagina web! \n";
+
+    var url = "https://wa.me/"+number+"?text="
+    + mensaje+"%0a%0a";
+
+    window.open(url, '_blank').focus();
+}
+
 $(document).ready(function() {
     $('#paquetes').hide();
     $('#formulario-reserva').hide();
