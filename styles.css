@@ -170,7 +170,6 @@ footer .social-icons a:hover {
 /* Ajustes generales para las imágenes de la galería */
 .gallery img {
     width: 100%;
-    max-width: 300px; /* Ajusta este valor según el tamaño que desees */
     height: auto;
     margin-bottom: 20px;
 }
