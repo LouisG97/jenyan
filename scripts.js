@@ -14,7 +14,7 @@ function navigateTo(section) {
 }
 
 function sendToWhatsapp(){
-    let number = "+526442041328";
+    let number = "+523315473853";
 
     let mensaje = "Hola, te escribo para agendar una cita, abajo te dejo mis datos: \n";
     let paquete = document.getElementById('paquete-seleccionado').value;
@@ -35,7 +35,7 @@ function sendToWhatsapp(){
 }
 
 function sendToWhatsapp2(){
-    let number = "+526442041328";
+    let number = "+523315473853";
 
     let mensaje = "Hola, te escribo desde tu pagina web! \n";
 
