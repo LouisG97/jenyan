@@ -175,6 +175,7 @@ footer .social-icons a:hover {
     max-height: 300px; /* Ajusta este valor según el tamaño que desees */
     display: block;
     margin: 0 auto; /* Centrar horizontalmente */
+    margin-bottom: 20px;
 }
 
 
