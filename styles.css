@@ -20,6 +20,21 @@ header .logo {
     margin: 0 auto 10px auto;
 }
 
+@keyframes zoomIn {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+header img {
+    animation: zoomIn 2s ease-in-out forwards;
+}
+
 
 nav {
     text-align: center;
