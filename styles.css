@@ -246,7 +246,7 @@ footer .social-icons a:hover {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 575px) {
     .me-4 {
        margin-left: 7%;
     }
