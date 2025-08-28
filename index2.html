@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jenyan - Fotografía Profesional</title>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- AOS Animations -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</head>
+<body class="bg-white text-gray-800 font-sans">
+
+<script>
+  AOS.init({
+    duration: 1000,
+    easing: 'ease-in-out',
+    once: true
+  });
+</script>
+
+<!-- HEADER -->
+<header class="fixed top-0 w-full z-50 bg-black/70 backdrop-blur-md text-white">
+  <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-3">
+    <img src="img/JenyanLogo.png" alt="Jenyan Logo" class="h-12">
+    <nav class="hidden md:flex gap-8 text-lg font-light">
+      <a href="#inicio" class="hover:text-yellow-400 transition">Inicio</a>
+      <a href="#maternidad" class="hover:text-yellow-400 transition">Maternidad</a>
+      <a href="#newborn" class="hover:text-yellow-400 transition">New Born</a>
+      <a href="#savethedate" class="hover:text-yellow-400 transition">Save the Date</a>
+      <a href="#contacto" class="hover:text-yellow-400 transition">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section id="inicio" class="h-screen bg-cover bg-center relative" style="background-image:url('img/portada.jpg')">
+  <div class="absolute inset-0 bg-black/50"></div>
+  <div class="relative h-full flex flex-col items-center justify-center text-center text-white px-4">
+    <h1 class="text-5xl md:text-6xl font-light mb-6">Jenyan Fotografía Profesional</h1>
+    <p class="max-w-2xl text-lg md:text-xl mb-6">Capturando momentos únicos de amor, maternidad y vida.</p>
+    <a href="#maternidad" class="px-6 py-3 bg-yellow-500 text-black font-semibold rounded-full shadow-lg hover:bg-yellow-400 transition">
+      Ver Portafolio
+    </a>
+  </div>
+</section>
+
+<!-- SOBRE MI -->
+<section id="sobre-mi" class="py-16 bg-white" data-aos="fade-right">
+  <div class="max-w-4xl mx-auto px-6 text-center md:text-left">
+    <h2 class="text-3xl font-light mb-6 text-gray-800">Jenyan love's lens</h2>
+    <p class="text-justify leading-relaxed mb-4">
+      <b>Jenyan love's lens</b> está dedicado a capturar los momentos donde se refleje el amor a la nueva vida, ya sea en pareja, al concebir un hijo y la nueva vida de un bebé. 
+      Jenyan se ha dedicado por más de 7 años a estudiar y perfeccionar la fotografía donde el amor se nota y se queda en la memoria con un solo clic.
+    </p>
+    <p class="text-justify leading-relaxed">
+      Es por eso que hoy ofrecemos estos servicios para que tú también puedas recordar con amor y pureza cada uno de estos momentos.
+    </p>
+  </div>
+</section>
+
+<!-- GALERIA PRINCIPAL -->
+<section id="main-images" class="py-16 bg-gray-100">
+  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+    
+    <a href="savethedate.html" data-aos="fade-up" class="relative overflow-hidden rounded-2xl shadow-lg group">
+      <img src="img/pareja.jpg" alt="Save the Date" class="object-cover w-full h-72 group-hover:scale-105 transition-transform">
+      <div class="absolute inset-0 bg-black/40 flex items-center justify-center text-white text-2xl font-light opacity-0 group-hover:opacity-100 transition">Save the Date</div>
+    </a>
+
+    <a href="newborn.html" data-aos="fade-down" class="relative overflow-hidden rounded-2xl shadow-lg group">
+      <img src="img/bebe.jpg" alt="New Born" class="object-cover w-full h-72 group-hover:scale-105 transition-transform">
+      <div class="absolute inset-0 bg-black/40 flex items-center justify-center text-white text-2xl font-light opacity-0 group-hover:opacity-100 transition">New Born</div>
+    </a>
+
+    <a href="book_actor.html" data-aos="fade-up" class="relative overflow-hidden rounded-2xl shadow-lg group">
+      <img src="img/book/book4.jpg" alt="Book de Actor" class="object-cover w-full h-72 group-hover:scale-105 transition-transform">
+      <div class="absolute inset-0 bg-black/40 flex items-center justify-center text-white text-2xl font-light opacity-0 group-hover:opacity-100 transition">Book de Actor</div>
+    </a>
+
+    <a href="maternidad.html" data-aos="fade-down" class="relative overflow-hidden rounded-2xl shadow-lg group">
+      <img src="img/embarazo.jpg" alt="Maternidad" class="object-cover w-full h-72 group-hover:scale-105 transition-transform">
+      <div class="absolute inset-0 bg-black/40 flex items-center justify-center text-white text-2xl font-light opacity-0 group-hover:opacity-100 transition">Maternidad</div>
+    </a>
+
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto" class="py-16 bg-black text-white" data-aos="fade-right">
+  <div class="max-w-4xl mx-auto px-6 text-center">
+    <h2 class="text-3xl font-light mb-6">Contacto</h2>
+    <p>Puedes contactarme a través de mi correo electrónico: 
+      <a href="mailto:jenyanlove@gmail.com" class="text-yellow-400 underline">jenyanlove@gmail.com</a>
+    </p>
+    <div class="mt-4 flex flex-col gap-4 items-center">
+      <a href="https://www.instagram.com/loveslens_foto" target="_blank" class="flex items-center gap-2 text-pink-400 hover:text-pink-300">
+        <i class="fab fa-instagram"></i> Instagram
+      </a>
+      <a href="https://wa.me/+523315473853?text=Hola, te escribo desde tu pagina web!" target="_blank" class="flex items-center gap-2 text-green-400 hover:text-green-300">
+        <i class="fab fa-whatsapp"></i> WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-black text-gray-400 text-center py-6">
+  <p>© 2024 Jenyan, Todos los derechos reservados</p>
+</footer>
+
+</body>
+</html>
