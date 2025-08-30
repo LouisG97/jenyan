@@ -1,102 +1,249 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Newborn - Jenyan</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-</head>
-<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="5">
-    <script>
-        AOS.init({
-            duration: 1000, // Duración de la animación en milisegundos
-            easing: 'ease-in-out', // Tipo de animación
-            once: true // Si solo quieres que la animación ocurra una vez
-        });
-    </script>
-    <header>
-        <img src="img/JenyanLogo.png" alt="Jenyan Logo" class="logo"><a href="index.html"></a>
-    </header>
-    <nav class="navbar text-bg-color navbar-expand-sm sticky-top">
-        <div class="container-sm">
-            <a class="navbar-brand mx-auto ms-0" href="index.html"><img src="img/JenyanLogo2.png" alt="Jenyan Logo" style="max-width: 70px;"></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-center me-4" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-link"><a href="index.html">Inicio</a></li>
-                    <li class="nav-link"><a href="maternidad.html">Maternidad</a></li>
-                    <li class="nav-link"><a href="newborn.html">New Born</a></li>
-                    <li class="nav-link"><a href="savethedate.html">Save the date</a></li>
-                    <li class="nav-link"><a href="book_actor.html">Book de actor</a></li>
-                    <li class="nav-link"><a href="promociones.html">Promociones</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <main>
-        <section id="galeria">
-            <h1 class="main-title">Newborn</h1>
-            <div class="gallery">
-                <img class="special-image" src="img/newborn1.jpg" alt="Newborn 1" data-aos="fade-up">
-                <img class="normal-image" src="img/newborn2.jpg" alt="Newborn 2" data-aos="fade-right">
-                <img class="normal-image" src="img/newborn3.jpg" alt="Newborn 3" data-aos="fade-left">
-                <img class="normal-image" src="img/newborn4.jpeg" alt="Newborn 4" data-aos="fade-up">
-                <img class="normal-image" src="img/newborn5.jpg" alt="Newborn 5" data-aos="fade-right">
-                <img class="normal-image" src="img/newborn6.jpeg" alt="Newborn 6" data-aos="fade-left">
-                <img class="normal-image" src="img/newborn7.jpg" alt="Newborn 7" data-aos="fade-up">
-                <img class="normal-image" src="img/newborn8.jpg" alt="Newborn 6" data-aos="fade-left">
-                <img class="normal-image" src="img/newborn9.jpg" alt="Newborn 7" data-aos="fade-up">
-            </div>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bebés - Jenyan</title>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#8292A0'
+          }
+        }
+      }
+    }
+  </script>
 
-            <div class="button-container">
-                <button id="reservar-cita">Reservar cita</button>
-            </div>
-            
-        </section>
-        <section id="paquetes">
-            <div class="paquete" id="paquete-1">
-                <h3 class="mid-title">NEWBORN</h3>
-                <p>Ofrece 1 hora de sesión</p>
-                <p>Ropita para la sesión</p>
-                <p><b>FOTOGRAFÍAS EN FÍSICO</b></p>
-                <p>15 fotografías impresas tamaño 5x7</p>
-                <p>1 fotografía de regalo 8X10</p>
-                <p><b>ARCHIVOS DIGITALES</b></p>
-                <p>35 fotografías sin retoque</p>
-                <p>15 fotografías con retoque</p>
-                <p>Precio $1,699</p>
-            </div>
-        </section>
-        
-        <section id="formulario-reserva">
-            <form id="reserva-form">
-                <input type="hidden" id="paquete-seleccionado" name="paquete_seleccionado">
-                <label for="nombre">Nombre Completo:</label>
-                <input type="text" id="nombre" name="nombre" required>
-                <label for="telefono">Número de Teléfono:</label>
-                <input type="text" id="telefono" name="telefono" required>
-                <label for="fecha">Fecha:</label>
-                <input type="date" id="fecha" name="fecha" required>
-                <label for="codigo-descuento">¿Tienes un código de descuento? Cánjealo aquí:</label>
-                <input type="text" id="codigo-descuento" name="codigo_descuento">
-                <div class="button-container">
-                    <button type="submit" onclick="sendToWhatsapp()">Agendar cita por Whatsapp</button>
-                </div>
-                
-            </form>
-        </section>
-    </main>
-    <footer>
-        <p>© 2024 Jenyan, Todos los derechos reservados</p>
-    </footer>
-    <script src="scripts.js"></script>
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- AOS Animations -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <!-- Favicon 📸 -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📸</text></svg>">
+
+  <!-- SEO Básico -->
+  <meta name="description" content="Sesiones para bebés en Guadalajara: retratos delicados y seguros para tu bebé recién nacido. Iluminación suave, poses cuidadas y estilo atemporal.">
+  <meta name="keywords" content="newborn, bebés, recién nacido, fotografía bebés, sesiones newborn, Guadalajara, Jenyan, fotógrafa">
+  <meta name="author" content="Jennifer Yanahí Pedroza Hernandez">
+  <link rel="canonical" href="https://www.jenyan.com.mx/newborn.html">
+  <meta name="robots" content="index,follow">
+
+  <!-- Open Graph (Facebook, WhatsApp, LinkedIn) -->
+  <meta property="og:title" content="Bebés - Jenyan Fotografía Profesional">
+  <meta property="og:description" content="Retratos de bebé con luz suave y estilo atemporal. Seguridad y calidez en cada sesión.">
+  <meta property="og:image" content="https://www.jenyan.com.mx/img/preview_newborn.jpg">
+  <meta property="og:url" content="https://www.jenyan.com.mx/newborn.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Jenyan Fotografía">
+  <meta property="og:locale" content="es_MX">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Bebés - Jenyan Fotografía Profesional">
+  <meta name="twitter:description" content="Retratos para bebé con luz suave y estilo atemporal. Seguridad y calidez en cada sesión.">
+  <meta name="twitter:image" content="https://www.jenyan.com.mx/img/preview_newborn.jpg">
+
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+  <script>
+    AOS.init({ duration: 1000, easing: 'ease-in-out', once: true });
+  </script>
+
+<!-- Header / Nav consistente con index (mismo tipo y espaciado) -->
+<header id="site-header" class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md text-gray-900 shadow-sm transition-transform duration-500">
+  <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
+    <a href="index.html" class="shrink-0">
+      <img src="img/JenyanLogo2.png" alt="Jenyan Logo" class="h-12">
+    </a>
+
+    <!-- Menú desktop (CLAVES: text-lg + font-light + gap-8 exactamente como index) -->
+    <nav class="hidden md:flex gap-8 text-lg font-light">
+      <a href="index.html"       class="hover:text-primary transition-colors no-underline">Inicio</a>
+      <a href="maternidad.html"  class="hover:text-primary transition-colors no-underline">Maternidad</a>
+      <a href="newborn.html"     class="text-primary transition-colors no-underline">Bebés</a>
+      <a href="savethedate.html" class="hover:text-primary transition-colors no-underline">Save the Date</a>
+      <a href="book_actor.html" class="hover:text-primary transition-colors no-underline">Book de actor</a>
+      <a href="#formulario-reserva" class="hover:text-primary transition-colors no-underline">Contacto</a>
+    </nav>
+
+    <!-- Botón móvil -->
+    <button id="menu-btn" class="md:hidden text-2xl" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menú">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+
+  <!-- Menú móvil (mismo layout del index, con fondo blanco) -->
+  <div id="mobile-menu" class="hidden md:hidden w-full bg-white text-gray-900 shadow-2xl border-t border-gray-200">
+    <nav class="px-4 py-4 space-y-2 text-lg font-light">
+      <a href="index.html"       class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-gray-100 no-underline"><i class="fas fa-house"></i> <span>Inicio</span></a>
+      <a href="maternidad.html"  class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-gray-100 no-underline"><i class="fas fa-person-pregnant"></i> <span>Maternidad</span></a>
+      <a href="newborn.html"     class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-gray-100 no-underline text-primary"><i class="fas fa-baby"></i> <span>Bebés</span></a>
+      <a href="savethedate.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-gray-100 no-underline"><i class="fas fa-calendar-check"></i> <span>Save the Date</span></a>
+      <a href="book_actor.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-gray-100 no-underline"><i class="fas fa-theater-masks"></i> <span>Book de actor</span></a>
+      <a href="#formulario-reserva" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-gray-100 no-underline"><i class="fas fa-envelope"></i> <span>Contacto</span></a>
+    </nav>
+    <div class="px-6 pb-6 pt-2 border-t border-gray-200">
+      <a href="https://wa.me/523320339939?text=Hola, te escribo desde tu página de fotografía para bebés" target="_blank"
+         class="block text-center px-4 py-3 rounded-xl bg-primary hover:bg-[#6f8394] text-white font-medium">
+        Escríbeme por WhatsApp
+      </a>
+      <p class="mt-3 text-center text-gray-600 text-sm">
+        <a href="mailto:jenyanlove@gmail.com" class="underline">jenyanlove@gmail.com</a>
+      </p>
+    </div>
+  </div>
+</header>
+
+  <main class="pt-28">
+    <!-- Hero -->
+    <section class="text-center mb-12 px-4">
+      <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Bebés</h1>
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+        Retratos delicados y seguros para tu bebé. Iluminación suave, poses cuidadas y estilo atemporal.
+      </p>
+    </section>
+
+    <!-- Galería -->
+    <section id="galeria" class="max-w-6xl mx-auto px-4 mb-16">
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <img src="img/bebe/bebe1.jpg" alt="Bebés 1" class="w-full h-64 object-cover object-[50%_10%] rounded-xl shadow cursor-pointer" onclick="openLightbox(this.src)">
+        <img src="img/bebe/bebe2.jpg" alt="Bebés 2" class="w-full h-64 object-cover object-[50%_50%] rounded-xl shadow cursor-pointer" onclick="openLightbox(this.src)">
+        <img src="img/bebe/bebe3.jpg" alt="Bebés 3" class="w-full h-64 object-cover object-[50%_45%] rounded-xl shadow cursor-pointer" onclick="openLightbox(this.src)">
+        <img src="img/bebe/bebe4.jpg" alt="Bebés 4" class="w-full h-64 object-cover object-[50%_45%] rounded-xl shadow cursor-pointer" onclick="openLightbox(this.src)">
+        <img src="img/bebe/bebe5.jpg" alt="Bebés 5" class="w-full h-64 object-cover object-center rounded-xl shadow cursor-pointer" onclick="openLightbox(this.src)">
+        <img src="img/bebe/bebe6.jpg" alt="Bebés 6" class="w-full h-64 object-cover object-[50%_70%] rounded-xl shadow cursor-pointer" onclick="openLightbox(this.src)">
+        <img src="img/bebe/bebe7.jpg" alt="Bebés 7" class="w-full h-64 object-cover object-center rounded-xl shadow cursor-pointer" onclick="openLightbox(this.src)">
+        <img src="img/bebe/bebe8.jpg" alt="Bebés 8" class="w-full h-64 object-cover object-[50%_45%] rounded-xl shadow cursor-pointer" onclick="openLightbox(this.src)">
+        <img src="img/bebe/bebe9.jpg" alt="Bebés 9" class="w-full h-64 object-cover object-[50%_70%] rounded-xl shadow cursor-pointer" onclick="openLightbox(this.src)">
+        <img src="img/bebe/bebe10.jpg" alt="Bebés 10" class="w-full h-64 object-cover object-center rounded-xl shadow cursor-pointer" onclick="openLightbox(this.src)">
+        <img src="img/bebe/bebe11.jpg" alt="Bebés 10" class="w-full h-64 object-cover object-[50%_40%] rounded-xl shadow cursor-pointer" onclick="openLightbox(this.src)">
+        <img src="img/bebe/bebe12.jpg" alt="Bebés 2" class="w-full h-64 object-cover object-[50%_45%] rounded-xl shadow cursor-pointer" onclick="openLightbox(this.src)">
+        <img src="img/bebe/bebe13.jpg" alt="Bebés 3" class="w-full h-64 object-cover object-[50%_25%] rounded-xl shadow cursor-pointer" onclick="openLightbox(this.src)">
+        <img src="img/bebe/bebe14.jpg" alt="Bebés 4" class="w-full h-64 object-cover object-[50%_25%] rounded-xl shadow cursor-pointer" onclick="openLightbox(this.src)">
+        <img src="img/bebe/bebe15.jpg" alt="Bebés 5" class="w-full h-64 object-cover object-[50%_70%] rounded-xl shadow cursor-pointer" onclick="openLightbox(this.src)">
+        <img src="img/bebe/bebe16.jpg" alt="Bebés 6" class="w-full h-64 object-cover object-[50%_55%] rounded-xl shadow cursor-pointer" onclick="openLightbox(this.src)">
+        <img src="img/bebe/bebe17.jpg" alt="Bebés 7" class="w-full h-64 object-cover object-[50%_70%] rounded-xl shadow cursor-pointer" onclick="openLightbox(this.src)">
+        <img src="img/bebe/bebe18.jpg" alt="Bebés 8" class="w-full h-64 object-cover object-center rounded-xl shadow cursor-pointer" onclick="openLightbox(this.src)">
+        <img src="img/bebe/bebe19.jpg" alt="Bebés 9" class="w-full h-64 object-cover object-[50%_50%] rounded-xl shadow cursor-pointer" onclick="openLightbox(this.src)">
+        <img src="img/bebe/bebe20.jpg" alt="Bebés 10" class="w-full h-64 object-cover object-center rounded-xl shadow cursor-pointer" onclick="openLightbox(this.src)">
+    </div>
+
+    <div class="text-center mt-8">
+        <a href="#formulario-reserva" class="px-6 py-3 bg-[#8292A0] text-white rounded-full shadow-lg hover:bg-[#6c7a89] transition">Reservar cita</a>
+    </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="hidden fixed inset-0 bg-black/90 flex items-center justify-center z-50">
+    <span class="absolute top-6 right-8 text-white text-4xl cursor-pointer" onclick="closeLightbox()">&times;</span>
+    <img id="lightbox-img" src="" alt="Imagen completa" class="max-h-[90%] max-w-[90%] rounded-xl shadow-lg">
+    </div>
+
+    <script>
+    function openLightbox(src) {
+        document.getElementById('lightbox-img').src = src;
+        document.getElementById('lightbox').classList.remove('hidden');
+    }
+    function closeLightbox() {
+        document.getElementById('lightbox').classList.add('hidden');
+    }
+    </script>
+
+    <!-- Paquetes -->
+    <section id="paquetes" class="bg-white py-16">
+      <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 px-4">
+        <div class="p-8 bg-gray-50 rounded-2xl shadow hover:shadow-lg transition" data-aos="fade-right">
+          <h3 class="text-2xl font-bold text-[#8292A0] mb-4">Bebé Paquete Básico</h3>
+          <ul class="text-gray-700 space-y-2">
+            <li>1 hora de sesión</li>
+            <li><b>Fotografías en físico:</b> 15 impresas 5x7, de regalo 1 impresa 8x10</li>
+            <li><b>Archivos digitales:</b> 35 sin edición y 15 de tu elección editadas</li>
+            <li>Ropita para la sesión incluída</li>
+          </ul>
+          <p class="mt-4 text-xl font-semibold text-gray-800">Precio: $1699</p>
+        </div>
+    </section>
+
+    <!-- Formulario -->
+    <section id="formulario-reserva" class="py-16 bg-gray-100">
+      <div class="max-w-xl mx-auto bg-white p-8 rounded-2xl shadow-lg" data-aos="fade-up">
+        <h2 class="text-3xl font-bold text-center text-gray-800 mb-6">Agendar Sesión</h2>
+        <form id="reserva-form" class="space-y-4">
+          <input type="hidden" id="paquete-seleccionado" name="paquete_seleccionado">
+          <input type="text" id="nombre" name="nombre" placeholder="Nombre completo" required class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#8292A0]">
+          <input type="tel" id="telefono" name="telefono" placeholder="Número de teléfono" required class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#8292A0]">
+          <input type="date" id="fecha" name="fecha" required class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#8292A0]">
+          <input type="text" id="codigo-descuento" name="codigo_descuento" placeholder="Código de descuento (opcional)" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#8292A0]">
+          <p class="text-sm text-gray-500 text-center">* Recomendado a partir de 5 meses de embarazo</p>
+          <div class="text-center">
+            <button type="submit" onclick="sendToWhatsapp()" class="px-6 py-3 bg-[#8292A0] text-white font-semibold rounded-full shadow-lg hover:bg-[#6c7a89] transition">
+              Agendar cita por WhatsApp
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-[#8292A0] text-white text-center py-4">
+    <p>© 2024 Jenyan, Todos los derechos reservados</p>
+  </footer>
+
+  <script>
+    function sendToWhatsapp() {
+      event.preventDefault();
+      let nombre = document.getElementById("nombre").value;
+      let telefono = document.getElementById("telefono").value;
+      let fecha = document.getElementById("fecha").value;
+      let paquete = document.getElementById("paquete-seleccionado").value;
+      let url = "https://wa.me/523320339939?text=" + 
+        "Hola, soy " + nombre + "%0A" +
+        "Quiero agendar una sesión para bebé%0A" +
+        "Teléfono: " + telefono + "%0A" +
+        "Fecha: " + fecha + "%0A" +
+        "Paquete: " + paquete;
+      window.open(url, '_blank').focus();
+    }
+  </script>
+  <script>
+    (function(){
+      // Autohide coherente con index
+      const header = document.getElementById('site-header');
+      let lastScroll = 0, hideTimeout = null;
+      function onScroll(){
+        const y = window.scrollY || window.pageYOffset;
+        const goingDown = y > lastScroll;
+        if (y <= 10){
+          header.classList.remove('-translate-y-full'); clearTimeout(hideTimeout);
+        } else if (goingDown){
+          clearTimeout(hideTimeout);
+          hideTimeout = setTimeout(()=> header.classList.add('-translate-y-full'), 1800);
+        } else {
+          header.classList.remove('-translate-y-full'); clearTimeout(hideTimeout);
+        }
+        lastScroll = y;
+      }
+      window.addEventListener('scroll', onScroll, { passive:true });
+
+      // Menú móvil toggle
+      const btn = document.getElementById('menu-btn');
+      const panel = document.getElementById('mobile-menu');
+      function closeMenu(){ panel.classList.add('hidden'); btn?.setAttribute('aria-expanded','false'); }
+      function openMenu(){  panel.classList.remove('hidden'); btn?.setAttribute('aria-expanded','true'); }
+      btn?.addEventListener('click', () => panel.classList.contains('hidden') ? openMenu() : closeMenu());
+      panel?.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+      document.addEventListener('keydown', e => { if(e.key === 'Escape') closeMenu(); });
+    })();
+  </script>
+
 </body>
 </html>
