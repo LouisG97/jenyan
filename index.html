@@ -64,7 +64,7 @@
   <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-3">
     <img src="img/JenyanLogo.png" alt="Jenyan Logo" class="h-12">
     <nav class="hidden md:flex gap-8 text-lg font-light">
-      <a href="#inicio" class="hover:text-primary transition">Inicio</a>
+      <a href="#inicio" class="text-primary font-semibold hover:text-primary transition" aria-current="page">Inicio</a>
       <a href="maternidad.html" class="hover:text-primary transition">Maternidad</a>
       <a href="newborn.html" class="hover:text-primary transition">Bebés</a>
       <a href="savethedate.html" class="hover:text-primary transition">Save the Date</a>
@@ -78,7 +78,7 @@
   <!-- Menú móvil mejorado -->
   <div id="mobile-menu" class="hidden md:hidden w-full bg-black/95 backdrop-blur-md text-white shadow-2xl">
     <nav class="px-4 py-4 space-y-2 text-lg">
-      <a href="#inicio" class="flex items-center gap-3 px-4 py-3 rounded-xl bg-white/5 hover:bg-white/10">
+      <a href="#inicio" class="flex items-center gap-3 px-4 py-3 rounded-xl bg-white/10 text-primary font-semibold hover:bg-white/10">
         <i class="fas fa-house"></i> <span>Inicio</span>
       </a>
       <a href="maternidad.html" class="flex items-center gap-3 px-4 py-3 rounded-xl bg-white/5 hover:bg-white/10">
@@ -133,22 +133,31 @@
     
     <a href="savethedate.html" data-aos="fade-up" class="relative overflow-hidden rounded-2xl shadow-lg group">
       <img src="img/pareja.jpg" alt="Save the Date" class="object-cover object-[50%_22%] w-full h-72 transition-transform md:group-hover:scale-105">
-      <div class="absolute inset-0 bg-black/40 flex items-center justify-center text-white text-2xl font-light opacity-100 md:opacity-0 md:group-hover:opacity-100 transition">Save the Date</div>
+      <div class="absolute inset-0 bg-black/40 flex items-end justify-center text-white text-2xl font-light opacity-100 transition">
+        <span class="mb-12">Save the Date</span>
+      </div>
+
     </a>
 
     <a href="newborn.html" data-aos="fade-down" class="relative overflow-hidden rounded-2xl shadow-lg group">
       <img src="img/bebe.jpg" alt="Bebé" class="object-cover object-[50%_45%] w-full h-72 transition-transform md:group-hover:scale-105">
-      <div class="absolute inset-0 bg-black/40 flex items-center justify-center text-white text-2xl font-light opacity-100 md:opacity-0 md:group-hover:opacity-100 transition">Bebés</div>
+      <div class="absolute inset-0 bg-black/40 flex items-end justify-center text-white text-2xl font-light opacity-100 transition">
+        <span class="mb-12">Bebés</span>
+      </div>
     </a>
 
     <a href="book_actor.html" data-aos="fade-up" class="relative overflow-hidden rounded-2xl shadow-lg group">
       <img src="img/book/book4.jpg" alt="Book de Actor" class="object-cover object-[50%_10%] w-full h-72 transition-transform md:group-hover:scale-105">
-      <div class="absolute inset-0 bg-black/40 flex items-center justify-center text-white text-2xl font-light opacity-100 md:opacity-0 md:group-hover:opacity-100 transition">Book de Actor</div>
+      <div class="absolute inset-0 bg-black/40 flex items-end justify-center text-white text-2xl font-light opacity-100 transition">
+        <span class="mb-12">Book de actor</span>
+      </div>
     </a>
 
     <a href="maternidad.html" data-aos="fade-down" class="relative overflow-hidden rounded-2xl shadow-lg group">
       <img src="img/embarazo.jpg" alt="Maternidad" class="object-cover object-[50%_45%] w-full h-72 transition-transform md:group-hover:scale-105">
-      <div class="absolute inset-0 bg-black/40 flex items-center justify-center text-white text-2xl font-light opacity-100 md:opacity-0 md:group-hover:opacity-100 transition">Maternidad</div>
+      <div class="absolute inset-0 bg-black/40 flex items-end justify-center text-white text-2xl font-light opacity-100 transition">
+        <span class="mb-12">Maternidad</span>
+      </div>
     </a>
 
   </div>

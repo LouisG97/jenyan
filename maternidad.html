@@ -4,34 +4,97 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Maternidad - Jenyan</title>
+  
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#8292A0'
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- AOS Animations -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <!-- Favicon 📸 -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📸</text></svg>">
+
+  <!-- SEO Básico -->
+  <meta name="description" content="Sesiones de maternidad profesionales en Guadalajara. Capturamos la magia de la espera con calidad artística y elegancia.">
+  <meta name="keywords" content="fotografía maternidad, embarazo, sesión de fotos, Jenyan, Guadalajara, fotógrafa">
+  <meta name="author" content="Jennifer Yanahí Pedroza Hernandez">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Jenyan Fotografía Profesional - Maternidad">
+  <meta property="og:description" content="Capturamos la magia de la espera con sesiones llenas de estilo, amor y elegancia.">
+  <meta property="og:image" content="https://www.jenyan.com.mx/img/preview.jpg"> 
+  <meta property="og:url" content="https://www.jenyan.com.mx/maternidad.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Jenyan Fotografía">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Jenyan Fotografía Profesional - Maternidad">
+  <meta name="twitter:description" content="Capturamos la magia de la espera con sesiones llenas de estilo, amor y elegancia.">
+  <meta name="twitter:image" content="https://www.jenyan.com.mx/img/preview.jpg">
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body class="bg-gray-50 text-gray-800 font-sans">
   <script>
     AOS.init({ duration: 1000, easing: 'ease-in-out', once: true });
   </script>
 
-  <!-- Header -->
-  <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md shadow-sm">
-    <div class="max-w-7xl mx-auto flex items-center justify-between p-4">
-      <a href="index.html">
-        <img src="img/JenyanLogo2.png" alt="Jenyan Logo" class="h-12">
+<!-- Header / Nav consistente con index (mismo tipo y espaciado) -->
+<header id="site-header" class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md text-gray-900 shadow-sm transition-transform duration-500">
+  <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
+    <a href="index.html" class="shrink-0">
+      <img src="img/JenyanLogo2.png" alt="Jenyan Logo" class="h-12">
+    </a>
+
+    <!-- Menú desktop (CLAVES: text-lg + font-light + gap-8 exactamente como index) -->
+    <nav class="hidden md:flex gap-8 text-lg font-light">
+      <a href="index.html"       class="hover:text-primary transition-colors no-underline">Inicio</a>
+      <a href="maternidad.html"  class="text-primary transition-colors no-underline">Maternidad</a>
+      <a href="newborn.html"     class="hover:text-primary transition-colors no-underline">Bebés</a>
+      <a href="savethedate.html" class="hover:text-primary transition-colors no-underline">Save the Date</a>
+      <a href="#formulario-reserva" class="hover:text-primary transition-colors no-underline">Contacto</a>
+    </nav>
+
+    <!-- Botón móvil -->
+    <button id="menu-btn" class="md:hidden text-2xl" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menú">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+
+  <!-- Menú móvil (mismo layout del index, con fondo blanco) -->
+  <div id="mobile-menu" class="hidden md:hidden w-full bg-white text-gray-900 shadow-2xl border-t border-gray-200">
+    <nav class="px-4 py-4 space-y-2 text-lg font-light">
+      <a href="index.html"       class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-gray-100 no-underline"><i class="fas fa-house"></i> <span>Inicio</span></a>
+      <a href="maternidad.html"  class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-gray-100 no-underline text-primary"><i class="fas fa-person-pregnant"></i> <span>Maternidad</span></a>
+      <a href="newborn.html"     class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-gray-100 no-underline"><i class="fas fa-baby"></i> <span>Bebés</span></a>
+      <a href="savethedate.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-gray-100 no-underline"><i class="fas fa-calendar-check"></i> <span>Save the Date</span></a>
+      <a href="#formulario-reserva" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-gray-100 no-underline"><i class="fas fa-envelope"></i> <span>Contacto</span></a>
+    </nav>
+    <div class="px-6 pb-6 pt-2 border-t border-gray-200">
+      <a href="https://wa.me/523320339939?text=Hola, te escribo desde tu página de maternidad" target="_blank"
+         class="block text-center px-4 py-3 rounded-xl bg-primary hover:bg-[#6f8394] text-white font-medium">
+        Escríbeme por WhatsApp
       </a>
-      <button class="md:hidden text-gray-600" onclick="document.getElementById('menu').classList.toggle('hidden')">
-        ☰
-      </button>
-      <ul id="menu" class="hidden md:flex gap-6 text-gray-700 font-medium">
-        <li><a href="index.html" class="hover:text-[#8292A0]">Inicio</a></li>
-        <li><a href="maternidad.html" class="text-[#8292A0] font-semibold">Maternidad</a></li>
-        <li><a href="newborn.html" class="hover:text-[#8292A0]">Newborn</a></li>
-        <li><a href="savethedate.html" class="hover:text-[#8292A0]">Save the Date</a></li>
-        <li><a href="book_actor.html" class="hover:text-[#8292A0]">Book Actor</a></li>
-        <li><a href="promociones.html" class="hover:text-[#8292A0]">Promociones</a></li>
-      </ul>
+      <p class="mt-3 text-center text-gray-600 text-sm">
+        <a href="mailto:jenyanlove@gmail.com" class="underline">jenyanlove@gmail.com</a>
+      </p>
     </div>
-  </nav>
+  </div>
+</header>
 
   <main class="pt-28">
     <!-- Hero -->
@@ -82,24 +145,39 @@
     <section id="paquetes" class="bg-white py-16">
       <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 px-4">
         <div class="p-8 bg-gray-50 rounded-2xl shadow hover:shadow-lg transition" data-aos="fade-right">
-          <h3 class="text-2xl font-bold text-[#8292A0] mb-4">Maternidad 1</h3>
-          <ul class="text-gray-700 space-y-2">
-            <li>6 Poses · 1 hora de sesión</li>
-            <li><b>Fotografías en físico:</b> 15 impresas 5x7 + 1 de regalo 8x10</li>
-            <li><b>Archivos digitales:</b> 50 sin retoque + 20 con retoque</li>
-            <li>10% Descuento Sesión Newborn</li>
-            <li>Vestido incluido</li>
-          </ul>
-          <p class="mt-4 text-xl font-semibold text-gray-800">Precio: $2,099</p>
-        </div>
-        <div class="p-8 bg-gray-50 rounded-2xl shadow hover:shadow-lg transition" data-aos="fade-left">
-          <h3 class="text-2xl font-bold text-[#8292A0] mb-4">Maternidad 2</h3>
+          <h3 class="text-2xl font-bold text-[#8292A0] mb-4">Maternidad Básico</h3>
           <ul class="text-gray-700 space-y-2">
             <li>4 Poses · 1 hora de sesión</li>
-            <li><b>Fotografías en físico:</b> 10 impresas 5x7</li>
-            <li><b>Archivos digitales:</b> 35 sin retoque + 10 con retoque</li>
+            <li><b>Fotografías en físico:</b> No incluídas</li>
+            <li><b>Archivos digitales:</b> 15 Fotografías con edición básica</li>
+            <li>10% Descuento Sesión Newborn</li>
+            <li>Debes traer tu propia ropa para las fotos</li>
           </ul>
-          <p class="mt-4 text-xl font-semibold text-gray-800">Precio desde: $1,599</p>
+          <p class="mt-4 text-xl font-semibold text-gray-800">Precio: $800</p>
+        </div>
+        <div class="p-8 bg-gray-50 rounded-2xl shadow hover:shadow-lg transition" data-aos="fade-left">
+          <h3 class="text-2xl font-bold text-[#8292A0] mb-4">Maternidad Plus</h3>
+          <ul class="text-gray-700 space-y-2">
+            <li>6 Poses · 1 hora de sesión</li>
+            <li><b>Fotografías en físico:</b> 5 impresas 4x6</li>
+            <li><b>Archivos digitales:</b> 40 sin edición y 20 de tu elección editadas</li>
+            <li>10% Descuento Sesión Newborn</li>
+            <li>Vestido para tu sesión incluído</li>
+          </ul>
+          <p class="mt-4 text-xl font-semibold text-gray-800">Precio desde: $950</p>
+        </div>
+        <div class="p-8 bg-gray-50 rounded-2xl shadow hover:shadow-lg transition" data-aos="fade-left">
+          <h3 class="text-2xl font-bold text-[#8292A0] mb-4">Maternidad Premium</h3>
+          <ul class="text-gray-700 space-y-2">
+            <li>8 Poses · 1 hora de sesión</li>
+            <li><b>Fotografías en físico:</b> 5 impresas 4x6 y una impresa 8x10</li>
+            <li><b>Archivos digitales:</b> 50 sin edición y hasta 35 de tu elección editadas</li>
+            <li>15% Descuento En cualquier futura sesión</li>
+            <li>Accesorios, props y fondos más detallados/li>
+            <li>2 Vestidos para tu sesión incluídos</li>
+            <li>Puedes traer otro cambio para tu sesión adicional</li>
+          </ul>
+          <p class="mt-4 text-xl font-semibold text-gray-800">Precio desde: $1,100</p>
         </div>
       </div>
     </section>
@@ -146,5 +224,36 @@
       window.open(url, '_blank').focus();
     }
   </script>
+  <script>
+    (function(){
+      // Autohide coherente con index
+      const header = document.getElementById('site-header');
+      let lastScroll = 0, hideTimeout = null;
+      function onScroll(){
+        const y = window.scrollY || window.pageYOffset;
+        const goingDown = y > lastScroll;
+        if (y <= 10){
+          header.classList.remove('-translate-y-full'); clearTimeout(hideTimeout);
+        } else if (goingDown){
+          clearTimeout(hideTimeout);
+          hideTimeout = setTimeout(()=> header.classList.add('-translate-y-full'), 1800);
+        } else {
+          header.classList.remove('-translate-y-full'); clearTimeout(hideTimeout);
+        }
+        lastScroll = y;
+      }
+      window.addEventListener('scroll', onScroll, { passive:true });
+
+      // Menú móvil toggle
+      const btn = document.getElementById('menu-btn');
+      const panel = document.getElementById('mobile-menu');
+      function closeMenu(){ panel.classList.add('hidden'); btn?.setAttribute('aria-expanded','false'); }
+      function openMenu(){  panel.classList.remove('hidden'); btn?.setAttribute('aria-expanded','true'); }
+      btn?.addEventListener('click', () => panel.classList.contains('hidden') ? openMenu() : closeMenu());
+      panel?.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+      document.addEventListener('keydown', e => { if(e.key === 'Escape') closeMenu(); });
+    })();
+  </script>
+
 </body>
 </html>
