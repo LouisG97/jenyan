@@ -1,96 +1,255 @@
 <!DOCTYPE html>
-<html lang="es" >
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Save the date - Jenyan</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-</head>
-<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="5">
-    <script>
-        AOS.init({
-            duration: 1000, // Duración de la animación en milisegundos
-            easing: 'ease-in-out', // Tipo de animación
-            once: true // Si solo quieres que la animación ocurra una vez
-        });
-    </script>
-    <header>
-        <img src="img/JenyanLogo.png" alt="Jenyan Logo" class="logo"><a href="index.html"></a>
-    </header>
-    <nav class="navbar text-bg-color navbar-expand-sm sticky-top">
-        <div class="container-sm">
-            <a class="navbar-brand mx-auto ms-0" href="index.html"><img src="img/JenyanLogo2.png" alt="Jenyan Logo" style="max-width: 70px;"></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-center me-4" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-link"><a href="index.html">Inicio</a></li>
-                    <li class="nav-link"><a href="maternidad.html">Maternidad</a></li>
-                    <li class="nav-link"><a href="newborn.html">New Born</a></li>
-                    <li class="nav-link"><a href="savethedate.html">Save the date</a></li>
-                    <li class="nav-link"><a href="promociones.html">Promociones</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <main>
-        <section id="galeria">
-            <h1 class="main-title">Save the date</h1>
-            <div class="gallery">
-                <img class="normal-image" src="img/save1.jpeg" alt="Save the Date 1" data-aos="fade-right">
-                <img class="normal-image" src="img/save2.jpeg" alt="Save the Date 2" data-aos="fade-left">
-                <img class="special-image" src="img/save3.jpeg" alt="Save the Date 3" data-aos="fade-up">
-                <img class="normal-image" src="img/save4.jpeg" alt="Save the Date 4" data-aos="fade-right">
-                <img class="normal-image" src="img/save5.jpeg" alt="Save the Date 5" data-aos="fade-left">
-            </div>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Save the Date - Jenyan</title>
 
-            <div class="button-container">
-                <button id="reservar-cita">Reservar cita</button>
-            </div>
-            
-        </section>
-        <section id="paquetes">
-            <div class="paquete" id="paquete-1">
-                <h3 class="mid-title">Save the date</h3>
-                <p>Ofrece 1 hora de sesión en interior o Exterior</p>
-                <p><b>FOTOGRAFÍAS EN FÍSICO</b></p>
-                <p>5 fotografías impresas tamaño 5x7</p>
-                <p>1 fotografía de regalo 13x19</p>
-                <p><b>ARCHIVOS DIGITALES</b></p>
-                <p>40 fotografías sin retoque</p>
-                <p>10 fotografías con retoque</p>
-                <p>Precio $1,399</p>
-            </div>
-        </section>
-        
-        <section id="formulario-reserva">
-            <form id="reserva-form">
-                <input type="hidden" id="paquete-seleccionado" name="paquete_seleccionado">
-                <label for="nombre">Nombre Completo:</label>
-                <input type="text" id="nombre" name="nombre" required>
-                <label for="telefono">Número de Teléfono:</label>
-                <input type="text" id="telefono" name="telefono" required>
-                <label for="fecha">Fecha:</label>
-                <input type="date" id="fecha" name="fecha" required>
-                <label for="codigo-descuento">¿Tienes un código de descuento? Cánjealo aquí:</label>
-                <input type="text" id="codigo-descuento" name="codigo_descuento">
-                <div class="button-container">
-                    <button type="submit" onclick="sendToWhatsapp()">Agendar cita por Whatsapp</button>
-                </div>
-                
-            </form>
-        </section>
-    </main>
-    <footer>
-        <p>© 2024 Jenyan, Todos los derechos reservados</p>
-    </footer>
-    <script src="scripts.js"></script>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { primary: '#8292A0' },
+          fontFamily: {
+            serif: ['"DM Serif Display"', 'serif'],
+            sans: ['Inter', 'ui-sans-serif', 'system-ui']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts: DM Serif Display (títulos) + Inter (texto) -->
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- AOS Animations -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <!-- Favicon 📸 -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📸</text></svg>">
+
+  <!-- SEO Básico -->
+  <meta name="description" content="Sesiones Save the Date en Guadalajara: fotos de pareja con estilo elegante, natural y atemporal.">
+  <meta name="keywords" content="save the date, fotos de pareja, sesión de compromiso, Guadalajara, Jenyan, fotógrafa">
+  <meta name="author" content="Jennifer Yanahí Pedroza Hernandez">
+  <link rel="canonical" href="https://www.jenyan.com.mx/savethedate.html">
+  <meta name="robots" content="index,follow">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Save the Date - Jenyan Fotografía Profesional">
+  <meta property="og:description" content="Sesiones de pareja elegantes y atemporales para anunciar su gran día.">
+  <meta property="og:image" content="https://www.jenyan.com.mx/img/save3.jpeg">
+  <meta property="og:url" content="https://www.jenyan.com.mx/savethedate.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Jenyan Fotografía">
+  <meta property="og:locale" content="es_MX">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Save the Date - Jenyan Fotografía Profesional">
+  <meta name="twitter:description" content="Sesiones de pareja elegantes y atemporales para anunciar su gran día.">
+  <meta name="twitter:image" content="https://www.jenyan.com.mx/img/save3.jpeg">
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+<script>
+  AOS.init({ duration: 1000, easing: 'ease-in-out', once: true });
+</script>
+
+<!-- Header / Nav consistente -->
+<header id="site-header" class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md text-gray-900 shadow-sm transition-transform duration-500">
+  <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
+    <a href="index.html" class="shrink-0">
+      <img src="img/JenyanLogo2.png" alt="Jenyan Logo" class="h-12">
+    </a>
+
+    <!-- Menú desktop -->
+    <nav class="hidden md:flex gap-8 text-lg font-light">
+      <a href="index.html"       class="hover:text-primary transition-colors no-underline">Inicio</a>
+      <a href="maternidad.html"  class="hover:text-primary transition-colors no-underline">Maternidad</a>
+      <a href="newborn.html"     class="hover:text-primary transition-colors no-underline">Bebés</a>
+      <a href="savethedate.html" class="text-primary transition-colors no-underline">Save the Date</a>
+      <a href="book_actor.html"  class="hover:text-primary transition-colors no-underline">Book de actor</a>
+      <a href="#formulario-reserva" class="hover:text-primary transition-colors no-underline">Contacto</a>
+    </nav>
+
+    <!-- Botón móvil -->
+    <button id="menu-btn" class="md:hidden text-2xl" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menú">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+
+  <!-- Menú móvil -->
+  <div id="mobile-menu" class="hidden md:hidden w-full bg-white text-gray-900 shadow-2xl border-t border-gray-200">
+    <nav class="px-4 py-4 space-y-2 text-lg font-light">
+      <a href="index.html"       class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-gray-100 no-underline"><i class="fas fa-house"></i> <span>Inicio</span></a>
+      <a href="maternidad.html"  class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-gray-100 no-underline"><i class="fas fa-person-pregnant"></i> <span>Maternidad</span></a>
+      <a href="newborn.html"     class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-gray-100 no-underline"><i class="fas fa-baby"></i> <span>Bebés</span></a>
+      <a href="savethedate.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-gray-100 no-underline text-primary font-semibold bg-gray-50"><i class="fas fa-calendar-check"></i> <span>Save the Date</span></a>
+      <a href="book_actor.html"  class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-gray-100 no-underline"><i class="fas fa-theater-masks"></i> <span>Book de actor</span></a>
+      <a href="#formulario-reserva" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-gray-100 no-underline"><i class="fas fa-envelope"></i> <span>Contacto</span></a>
+    </nav>
+    <div class="px-6 pb-6 pt-2 border-t border-gray-200">
+      <a href="https://wa.me/523320339939?text=Hola, te escribo desde tu página de Save the Date" target="_blank"
+         class="block text-center px-4 py-3 rounded-xl bg-primary hover:bg-[#6f8394] text-white font-medium">
+        Escríbeme por WhatsApp
+      </a>
+      <p class="mt-3 text-center text-gray-600 text-sm">
+        <a href="mailto:jenyanlove@gmail.com" class="underline">jenyanlove@gmail.com</a>
+      </p>
+    </div>
+  </div>
+</header>
+
+<main class="pt-28">
+  <!-- Hero -->
+  <section class="text-center mb-12 px-4">
+    <h1 class="text-4xl md:text-5xl font-serif text-gray-800 mb-4">Save the Date</h1>
+    <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+      Sesiones de pareja elegantes y atemporales para anunciar su gran día.
+    </p>
+  </section>
+
+  <!-- Galería -->
+  <section id="galeria" class="max-w-6xl mx-auto px-4 mb-16">
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <img src="img/save1.jpeg" alt="Save the Date 1" loading="lazy" decoding="async"
+           class="w-full h-64 object-cover object-[50%_30%] rounded-xl shadow cursor-pointer"
+           onclick="openLightbox(this.src)">
+      <img src="img/save2.jpeg" alt="Save the Date 2" loading="lazy" decoding="async"
+           class="w-full h-64 object-cover object-[50%_30%] rounded-xl shadow cursor-pointer"
+           onclick="openLightbox(this.src)">
+      <img src="img/save3.jpeg" alt="Save the Date 3" loading="lazy" decoding="async"
+           class="w-full h-64 object-cover object-[50%_5%] rounded-xl shadow cursor-pointer"
+           onclick="openLightbox(this.src)">
+      <img src="img/save4.jpeg" alt="Save the Date 4" loading="lazy" decoding="async"
+           class="w-full h-64 object-cover object-[50%_35%]  rounded-xl shadow cursor-pointer"
+           onclick="openLightbox(this.src)">
+    </div>
+
+    <div class="text-center mt-8">
+      <a href="#formulario-reserva" class="px-6 py-3 bg-primary text-white rounded-full shadow-lg hover:bg-[#6c7a89] transition">
+        Reservar cita
+      </a>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="hidden fixed inset-0 bg-black/90 flex items-center justify-center z-50"
+       role="dialog" aria-modal="true" aria-label="Imagen ampliada">
+    <span class="absolute top-6 right-8 text-white text-4xl cursor-pointer"
+          role="button" aria-label="Cerrar" tabindex="0"
+          onclick="closeLightbox()">&times;</span>
+    <img id="lightbox-img" src="" alt="Imagen completa" class="max-h-[90%] max-w-[90%] rounded-xl shadow-lg">
+  </div>
+
+  <!-- Paquete -->
+  <section id="paquetes" class="bg-white py-16">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="p-8 bg-gray-50 rounded-2xl shadow hover:shadow-lg transition" data-aos="fade-up">
+        <h3 class="text-2xl font-serif text-primary mb-4">Save the Date</h3>
+        <ul class="text-gray-700 space-y-2">
+          <li>1 hora de sesión (interior o exterior)</li>
+          <li><b>Fotografías impresas:</b> 5 tamaño 5x7 + 1 de regalo tamaño 13x19</li>
+          <li><b>Fotografías digitales:</b> 40 sin retoque + 10 con retoque</li>
+        </ul>
+        <p class="mt-4 text-xl font-semibold text-gray-800">Precio: $1,399</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Formulario -->
+  <section id="formulario-reserva" class="py-16 bg-gray-100">
+    <div class="max-w-xl mx-auto bg-white p-8 rounded-2xl shadow-lg" data-aos="fade-up">
+      <h2 class="text-3xl font-serif text-center text-gray-800 mb-6">Agendar Sesión</h2>
+      <form id="reserva-form" class="space-y-4">
+        <input type="hidden" id="paquete-seleccionado" name="paquete_seleccionado" value="Save the Date">
+        <input type="text" id="nombre" name="nombre" placeholder="Nombre completo" required
+               class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary">
+        <input type="tel" id="telefono" name="telefono" placeholder="Número de teléfono" required
+               class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary">
+        <input type="date" id="fecha" name="fecha" required
+               class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary">
+        <input type="text" id="codigo-descuento" name="codigo_descuento" placeholder="Código de descuento (opcional)"
+               class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary">
+        <div class="text-center">
+          <button type="submit" onclick="sendToWhatsapp(event)"
+                  class="px-6 py-3 bg-primary text-white font-semibold rounded-full shadow-lg hover:bg-[#6c7a89] transition">
+            Agendar cita por WhatsApp
+          </button>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<!-- Footer -->
+<footer class="bg-primary text-white text-center py-4">
+  <p>© 2024 Jenyan, Todos los derechos reservados</p>
+</footer>
+
+<!-- Scripts: Lightbox + Menú móvil + Autohide header -->
+<script>
+  (function(){
+    // Lightbox
+    const lb = document.getElementById('lightbox');
+    const img = document.getElementById('lightbox-img');
+    window.openLightbox = (src) => { img.src = src; lb.classList.remove('hidden'); };
+    window.closeLightbox = () => lb.classList.add('hidden');
+    lb.addEventListener('click', (e) => { if (e.target === lb) closeLightbox(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
+
+    // Autohide header
+    const header = document.getElementById('site-header');
+    let lastScroll = 0, hideTimeout = null;
+    function onScroll(){
+      const y = window.scrollY || window.pageYOffset;
+      const goingDown = y > lastScroll;
+      if (y <= 10){
+        header.classList.remove('-translate-y-full'); clearTimeout(hideTimeout);
+      } else if (goingDown){
+        clearTimeout(hideTimeout);
+        hideTimeout = setTimeout(()=> header.classList.add('-translate-y-full'), 1800);
+      } else {
+        header.classList.remove('-translate-y-full'); clearTimeout(hideTimeout);
+      }
+      lastScroll = y;
+    }
+    window.addEventListener('scroll', onScroll, { passive:true });
+
+    // Menú móvil
+    const btn = document.getElementById('menu-btn');
+    const panel = document.getElementById('mobile-menu');
+    const closeMenu = () => { panel.classList.add('hidden'); btn?.setAttribute('aria-expanded','false'); };
+    const openMenu  = () => { panel.classList.remove('hidden'); btn?.setAttribute('aria-expanded','true'); };
+    btn?.addEventListener('click', () => panel.classList.contains('hidden') ? openMenu() : closeMenu());
+    panel?.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+
+    // WhatsApp
+    window.sendToWhatsapp = (event) => {
+      event.preventDefault();
+      const nombre   = document.getElementById("nombre").value.trim();
+      const telefono = document.getElementById("telefono").value.trim();
+      const fecha    = document.getElementById("fecha").value;
+      const paquete  = document.getElementById("paquete-seleccionado").value;
+      const desc     = document.getElementById("codigo-descuento").value.trim();
+
+      const mensaje = `Hola, soy ${nombre}
+Quiero agendar una sesión Save the Date
+Teléfono: ${telefono}
+Fecha: ${fecha}
+Paquete: ${paquete}
+Código de descuento: ${desc || 'N/A'}`;
+
+      const url = "https://wa.me/523320339939?text=" + encodeURIComponent(mensaje);
+      window.open(url, '_blank')?.focus();
+    };
+  })();
+</script>
 </body>
 </html>
