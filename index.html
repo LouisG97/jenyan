@@ -13,6 +13,10 @@
         extend: {
           colors: {
             primary: '#8292A0'
+          },
+          fontFamily: {
+            serif: ['"DM Serif Display"', 'serif'],
+            sans: ['Inter', 'ui-sans-serif', 'system-ui']
           }
         }
       }
@@ -21,6 +25,8 @@
   
   <!-- FontAwesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- Google Fonts: DM Serif Display (títulos) + Inter (texto) -->
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
 
   <!-- AOS Animations -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -111,7 +117,7 @@
 <section id="inicio" class="h-screen bg-cover bg-center relative" style="background-image:url('img/portada.jpg')">
   <div class="absolute inset-0 bg-black/50"></div>
   <div class="relative h-full flex flex-col items-center justify-center text-center text-white px-4">
-    <h1 class="text-5xl md:text-6xl font-light mb-6">Jenyan Fotografía Profesional</h1>
+    <h1 class="text-5xl md:text-6xl font-serif mb-6">Jenyan Fotografía Profesional</h1>
     <p class="max-w-2xl text-lg md:text-xl mb-6">Del amor nace la vida.</p>
   </div>
 </section>
@@ -122,28 +128,28 @@
   <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 lg:grid-cols-4 gap-6">
 
     <a href="maternidad.html" data-aos="fade-down" class="relative overflow-hidden rounded-2xl shadow-lg group">
-      <img src="img/embarazo.jpg" alt="Maternidad" class="object-cover object-[50%_45%] w-full h-72 transition-transform md:group-hover:scale-105">
+      <img src="img/embarazo.jpg" alt="Maternidad" loading="lazy" decoding="async" class="object-cover object-[50%_45%] w-full h-72 transition-transform md:group-hover:scale-105">
       <div class="absolute inset-0 bg-black/40 flex items-end justify-center text-white text-2xl font-light opacity-100 transition">
         <span class="mb-12">Maternidad</span>
       </div>
     </a>    
 
     <a href="newborn.html" data-aos="fade-up" class="relative overflow-hidden rounded-2xl shadow-lg group">
-      <img src="img/bebe.jpg" alt="Bebé" class="object-cover object-[50%_45%] w-full h-72 transition-transform md:group-hover:scale-105">
+      <img src="img/bebe.jpg" alt="Bebé" loading="lazy" decoding="async" class="object-cover object-[50%_45%] w-full h-72 transition-transform md:group-hover:scale-105">
       <div class="absolute inset-0 bg-black/40 flex items-end justify-center text-white text-2xl font-light opacity-100 transition">
         <span class="mb-12">Bebés</span>
       </div>
     </a>
 
     <a href="book_actor.html" data-aos="fade-down" class="relative overflow-hidden rounded-2xl shadow-lg group">
-      <img src="img/book/book4.jpg" alt="Book de Actor" class="object-cover object-[50%_10%] w-full h-72 transition-transform md:group-hover:scale-105">
+      <img src="img/book/book4.jpg" alt="Book de Actor" loading="lazy" decoding="async" class="object-cover object-[50%_10%] w-full h-72 transition-transform md:group-hover:scale-105">
       <div class="absolute inset-0 bg-black/40 flex items-end justify-center text-white text-2xl font-light opacity-100 transition">
         <span class="mb-12">Book de actor</span>
       </div>
     </a>
 
     <a href="savethedate.html" data-aos="fade-up" class="relative overflow-hidden rounded-2xl shadow-lg group">
-      <img src="img/pareja.jpg" alt="Save the Date" class="object-cover object-[50%_22%] w-full h-72 transition-transform md:group-hover:scale-105">
+      <img src="img/pareja.jpg" alt="Save the Date" loading="lazy" decoding="async" class="object-cover object-[50%_22%] w-full h-72 transition-transform md:group-hover:scale-105">
       <div class="absolute inset-0 bg-black/40 flex items-end justify-center text-white text-2xl font-light opacity-100 transition">
         <span class="mb-12">Save the Date</span>
       </div>
@@ -167,7 +173,7 @@
 
     <!-- Texto -->
     <div class="text-center md:text-left">
-      <h2 class="text-3xl md:text-4xl font-light mb-4 text-gray-800">
+      <h2 class="text-3xl md:text-4xl font-serif mb-4 text-gray-800">
         Jennifer Pedroza
       </h2>
       <div class="w-30 h-1 bg-primary/70 rounded mx-auto md:mx-0 mb-6"></div>
@@ -186,7 +192,7 @@
 
 
 <!-- CONTACTO -->
-<section id="contacto" class="py-16 bg-black text-white" data-aos="fade-up">
+<section id="contacto" class="py-16 bg-black text-white font-serif" data-aos="fade-up">
   <div class="max-w-4xl mx-auto px-6 text-center">
     <h2 class="text-3xl font-light mb-6">Contacto</h2>
     <p>

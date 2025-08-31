@@ -13,6 +13,10 @@
         extend: {
           colors: {
             primary: '#8292A0'
+          },
+          fontFamily: {
+            serif: ['"DM Serif Display"', 'serif'],
+            sans: ['Inter', 'ui-sans-serif', 'system-ui']
           }
         }
       }
@@ -21,6 +25,10 @@
 
   <!-- FontAwesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Google Fonts: DM Serif Display (títulos) + Inter (texto) -->
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+
 
   <!-- AOS Animations -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -80,7 +88,7 @@
   <div id="mobile-menu" class="hidden md:hidden w-full bg-white text-gray-900 shadow-2xl border-t border-gray-200">
     <nav class="px-4 py-4 space-y-2 text-lg font-light">
       <a href="index.html"       class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-gray-100 no-underline"><i class="fas fa-house"></i> <span>Inicio</span></a>
-      <a href="maternidad.html"  class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-gray-100 no-underline text-primary"><i class="fas fa-person-pregnant"></i> <span>Maternidad</span></a>
+      <a href="maternidad.html"  class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-gray-100 no-underline text-primary font-semibold bg-gray-50"><i class="fas fa-person-pregnant"></i> <span>Maternidad</span></a>
       <a href="newborn.html"     class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-gray-100 no-underline"><i class="fas fa-baby"></i> <span>Bebés</span></a>
       <a href="savethedate.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-gray-100 no-underline"><i class="fas fa-calendar-check"></i> <span>Save the Date</span></a>
       <a href="book_actor.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-gray-100 no-underline"><i class="fas fa-theater-masks"></i> <span>Book de actor</span></a>
@@ -101,27 +109,33 @@
   <main class="pt-28">
     <!-- Hero -->
     <section class="text-center mb-12 px-4">
-      <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Maternidad</h1>
+      <h1 class="text-4xl md:text-5xl font-serif text-gray-800 mb-4">Maternidad</h1>
       <p class="text-lg text-gray-600 max-w-2xl mx-auto">
         Capturamos la magia de la espera con sesiones llenas de estilo, amor y elegancia.
       </p>
     </section>
 
+    <!-- Imagen destacada -->
+    <section class="max-w-2xl mx-auto px-4 mb-12" data-aos="fade-up">
+      <img src="img/embarazo/embarazo.jpg" alt="Sesión de maternidad" 
+          class="w-full rounded-2xl shadow-lg object-cover object-center">
+    </section>
+
     <!-- Galería -->
     <section id="galeria" class="max-w-6xl mx-auto px-4 mb-16">
     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        <img src="img/embarazo/embarazo1.jpg" alt="Maternidad 1" class="w-full h-64 object-cover object-[50%_30%] rounded-xl shadow cursor-pointer" onclick="openLightbox(this.src)">
-        <img src="img/embarazo/embarazo3.jpg" alt="Maternidad 2" class="w-full h-64 object-cover object-[50%_25%] rounded-xl shadow cursor-pointer" onclick="openLightbox(this.src)">
-        <img src="img/embarazo/embarazo5.jpg" alt="Maternidad 3" class="w-full h-64 object-cover object-[50%_40%] rounded-xl shadow cursor-pointer" onclick="openLightbox(this.src)">
-        <img src="img/embarazo/embarazo4.jpg" alt="Maternidad 4" class="w-full h-64 object-cover object-[50%_45%] rounded-xl shadow cursor-pointer" onclick="openLightbox(this.src)">
-        <img src="img/embarazo/embarazo2.jpg" alt="Maternidad 5" class="w-full h-64 object-cover object-center rounded-xl shadow cursor-pointer" onclick="openLightbox(this.src)">
-        <img src="img/embarazo/embarazo9.jpg" alt="Maternidad 6" class="w-full h-64 object-cover object-center rounded-xl shadow cursor-pointer" onclick="openLightbox(this.src)">
-        <img src="img/embarazo/embarazo7.jpg" alt="Maternidad 7" class="w-full h-64 object-cover object-center rounded-xl shadow cursor-pointer" onclick="openLightbox(this.src)">
-        <img src="img/embarazo/embarazo6.jpg" alt="Maternidad 8" class="w-full h-64 object-cover object-center rounded-xl shadow cursor-pointer" onclick="openLightbox(this.src)">
-        <img src="img/embarazo/embarazo8.jpg" alt="Maternidad 9" class="w-full h-64 object-cover object-[50%_15%] rounded-xl shadow cursor-pointer" onclick="openLightbox(this.src)">
-        <img src="img/embarazo/embarazo10.jpg" alt="Maternidad 10" class="w-full h-64 object-cover object-[50%_5%] rounded-xl shadow cursor-pointer" onclick="openLightbox(this.src)">
-        <img src="img/embarazo/embarazo12.jpg" alt="Maternidad 11" class="w-full h-64 object-cover object-[50%_10%] rounded-xl shadow cursor-pointer" onclick="openLightbox(this.src)">
-        <img src="img/embarazo/embarazo11.jpg" alt="Maternidad 12" class="w-full h-64 object-cover object-[50%_35%] rounded-xl shadow cursor-pointer" onclick="openLightbox(this.src)">
+        <img src="img/embarazo/embarazo1.jpg" alt="Maternidad 1" loading="lazy" decoding="async" class="w-full h-64 object-cover object-[50%_30%] rounded-xl shadow cursor-pointer" onclick="openLightbox(this.src)">
+        <img src="img/embarazo/embarazo3.jpg" alt="Maternidad 2" loading="lazy" decoding="async" class="w-full h-64 object-cover object-[50%_25%] rounded-xl shadow cursor-pointer" onclick="openLightbox(this.src)">
+        <img src="img/embarazo/embarazo5.jpg" alt="Maternidad 3" loading="lazy" decoding="async" class="w-full h-64 object-cover object-[50%_40%] rounded-xl shadow cursor-pointer" onclick="openLightbox(this.src)">
+        <img src="img/embarazo/embarazo4.jpg" alt="Maternidad 4" loading="lazy" decoding="async" class="w-full h-64 object-cover object-[50%_45%] rounded-xl shadow cursor-pointer" onclick="openLightbox(this.src)">
+        <img src="img/embarazo/embarazo2.jpg" alt="Maternidad 5" loading="lazy" decoding="async" class="w-full h-64 object-cover object-center rounded-xl shadow cursor-pointer" onclick="openLightbox(this.src)">
+        <img src="img/embarazo/embarazo9.jpg" alt="Maternidad 6" loading="lazy" decoding="async" class="w-full h-64 object-cover object-center rounded-xl shadow cursor-pointer" onclick="openLightbox(this.src)">
+        <img src="img/embarazo/embarazo7.jpg" alt="Maternidad 7" loading="lazy" decoding="async" class="w-full h-64 object-cover object-center rounded-xl shadow cursor-pointer" onclick="openLightbox(this.src)">
+        <img src="img/embarazo/embarazo6.jpg" alt="Maternidad 8" loading="lazy" decoding="async" class="w-full h-64 object-cover object-center rounded-xl shadow cursor-pointer" onclick="openLightbox(this.src)">
+        <img src="img/embarazo/embarazo8.jpg" alt="Maternidad 9" loading="lazy" decoding="async" class="w-full h-64 object-cover object-[50%_15%] rounded-xl shadow cursor-pointer" onclick="openLightbox(this.src)">
+        <img src="img/embarazo/embarazo10.jpg" alt="Maternidad 10" loading="lazy" decoding="async" class="w-full h-64 object-cover object-[50%_5%] rounded-xl shadow cursor-pointer" onclick="openLightbox(this.src)">
+        <img src="img/embarazo/embarazo12.jpg" alt="Maternidad 11" loading="lazy" decoding="async" class="w-full h-64 object-cover object-[50%_10%] rounded-xl shadow cursor-pointer" onclick="openLightbox(this.src)">
+        <img src="img/embarazo/embarazo11.jpg" alt="Maternidad 12" loading="lazy" decoding="async" class="w-full h-64 object-cover object-[50%_35%] rounded-xl shadow cursor-pointer" onclick="openLightbox(this.src)">
     </div>
 
     <div class="text-center mt-8">
@@ -130,26 +144,39 @@
     </section>
 
     <!-- Lightbox -->
-    <div id="lightbox" class="hidden fixed inset-0 bg-black/90 flex items-center justify-center z-50">
-    <span class="absolute top-6 right-8 text-white text-4xl cursor-pointer" onclick="closeLightbox()">&times;</span>
+    <div id="lightbox" class="hidden fixed inset-0 bg-black/90 flex items-center justify-center z-50" role="dialog" aria-modal="true" aria-label="Imagen ampliada">
+    <span class="absolute top-6 right-8 text-white text-4xl cursor-pointer"  role="button" aria-label="Cerrar" tabindex="0" onclick="closeLightbox()">&times;</span>
     <img id="lightbox-img" src="" alt="Imagen completa" class="max-h-[90%] max-w-[90%] rounded-xl shadow-lg">
     </div>
 
     <script>
-    function openLightbox(src) {
-        document.getElementById('lightbox-img').src = src;
-        document.getElementById('lightbox').classList.remove('hidden');
-    }
-    function closeLightbox() {
-        document.getElementById('lightbox').classList.add('hidden');
-    }
+      (function(){
+        const lb = document.getElementById('lightbox');
+        const img = document.getElementById('lightbox-img');
+
+        window.openLightbox = (src) => {
+          img.src = src;
+          lb.classList.remove('hidden');
+        };
+        window.closeLightbox = () => lb.classList.add('hidden');
+
+        // Cierra al hacer click en el fondo (no en la imagen)
+        lb.addEventListener('click', (e) => {
+          if (e.target === lb) closeLightbox();
+        });
+
+        // Cierra con ESC
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape') closeLightbox();
+        });
+      })();
     </script>
 
     <!-- Paquetes -->
     <section id="paquetes" class="bg-white py-16">
       <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 px-4">
         <div class="p-8 bg-gray-50 rounded-2xl shadow hover:shadow-lg transition" data-aos="fade-right">
-          <h3 class="text-2xl font-bold text-[#8292A0] mb-4">Maternidad Básico</h3>
+          <h3 class="text-2xl font-serif text-[#8292A0] mb-4">Maternidad Básico</h3>
           <ul class="text-gray-700 space-y-2">
             <li>4 Poses</li>
             <li><b>Fotografías impresas:</b> No incluídas</li>
@@ -159,7 +186,7 @@
           <p class="mt-4 text-xl font-semibold text-gray-800">Precio: $800</p>
         </div>
         <div class="p-8 bg-gray-50 rounded-2xl shadow hover:shadow-lg transition" data-aos="fade-left">
-          <h3 class="text-2xl font-bold text-[#8292A0] mb-4">Maternidad Plus</h3>
+          <h3 class="text-2xl font-serif text-[#8292A0] mb-4">Maternidad Plus</h3>
           <ul class="text-gray-700 space-y-2">
             <li>6 Poses</li>
             <li><b>Fotografías impresas:</b> 5 impresas tamaño 4x6</li>
@@ -170,7 +197,7 @@
           <p class="mt-4 text-xl font-semibold text-gray-800">Precio desde: $950</p>
         </div>
         <div class="p-8 bg-gray-50 rounded-2xl shadow hover:shadow-lg transition" data-aos="fade-left">
-          <h3 class="text-2xl font-bold text-[#8292A0] mb-4">Maternidad Premium</h3>
+          <h3 class="text-2xl font-serif text-[#8292A0] mb-4">Maternidad Premium</h3>
           <ul class="text-gray-700 space-y-2">
             <li>8 Poses</li>
             <li><b>Fotografías impresas:</b> 5 impresas tamaño 4x6 y una impresa tamaño 8x10</li>
@@ -188,7 +215,7 @@
     <!-- Formulario -->
     <section id="formulario-reserva" class="py-16 bg-gray-100">
       <div class="max-w-xl mx-auto bg-white p-8 rounded-2xl shadow-lg" data-aos="fade-up">
-        <h2 class="text-3xl font-bold text-center text-gray-800 mb-6">Agendar Sesión</h2>
+        <h2 class="text-3xl font-serif text-center text-gray-800 mb-6">Agendar Sesión</h2>
         <form id="reserva-form" class="space-y-4">
           <input type="hidden" id="paquete-seleccionado" name="paquete_seleccionado">
           <input type="text" id="nombre" name="nombre" placeholder="Nombre completo" required class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#8292A0]">
@@ -212,19 +239,21 @@
   </footer>
 
   <script>
-    function sendToWhatsapp() {
+    function sendToWhatsapp(event) {
       event.preventDefault();
-      let nombre = document.getElementById("nombre").value;
-      let telefono = document.getElementById("telefono").value;
-      let fecha = document.getElementById("fecha").value;
-      let paquete = document.getElementById("paquete-seleccionado").value;
-      let url = "https://wa.me/523320339939?text=" + 
-        "Hola, soy " + nombre + "%0A" +
-        "Quiero agendar una sesión de maternidad%0A" +
-        "Teléfono: " + telefono + "%0A" +
-        "Fecha: " + fecha + "%0A" +
-        "Paquete: " + paquete;
-      window.open(url, '_blank').focus();
+      const nombre   = document.getElementById("nombre").value.trim();
+      const telefono = document.getElementById("telefono").value.trim();
+      const fecha    = document.getElementById("fecha").value;
+      const paquete  = document.getElementById("paquete-seleccionado").value;
+
+      const mensaje = `Hola, soy ${nombre}
+      Quiero agendar una sesión para bebé
+      Teléfono: ${telefono}
+      Fecha: ${fecha}
+      Paquete: ${paquete}`;
+
+      const url = "https://wa.me/523320339939?text=" + encodeURIComponent(mensaje);
+      window.open(url, '_blank')?.focus();
     }
   </script>
   <script>
